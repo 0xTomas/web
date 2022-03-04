@@ -57,7 +57,7 @@ const CosmosStakingRouter = ({ cryptoAmount, assetId, fiatRate, apr }: StakingLo
             minWidth={{ base: 'auto', lg: '450px' }}
             maxWidth={{ base: 'auto', lg: '450px' }}
           >
-            <Flex direction='column' minWidth='400px'>
+            <Flex flexDirection='column' minWidth='400px'>
               <Route exact key={StakingPath.Confirm} path={StakingPath.Confirm}>
                 <Confirm
                   apr={apr}

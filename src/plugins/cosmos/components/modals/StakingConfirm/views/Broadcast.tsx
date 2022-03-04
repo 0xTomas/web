@@ -87,14 +87,14 @@ export const Broadcast = ({ apr, assetId, cryptoStakeAmount, fiatRate }: StakePr
         pb='18px'
         px='30px'
         onSubmit={handleSubmit(onSubmit)}
-        direction='column'
+        flexDirection='column'
         alignItems='center'
         justifyContent='space-between'
       >
         <ModalHeader textAlign='center'>{translate('defi.broadcastingTransaction')}</ModalHeader>
         <Flex width='100%' mb='20px' justifyContent='space-between'>
           <Text color='gray.500' translation={'defi.stake'} />
-          <Flex direction='column' alignItems='flex-end'>
+          <Flex flexDirection='column' alignItems='flex-end'>
             <Amount.Fiat
               fontWeight='semibold'
               value={cryptoStakeAmount.times(fiatRate).toPrecision()}
@@ -132,7 +132,7 @@ export const Broadcast = ({ apr, assetId, cryptoStakeAmount, fiatRate }: StakePr
         </Flex>
         <Flex width='100%' mb='13px' justifyContent='space-between'>
           <Text translation={'defi.estimatedYearlyRewards'} color='gray.500' />
-          <Flex direction='column' alignItems='flex-end'>
+          <Flex flexDirection='column' alignItems='flex-end'>
             <Amount.Crypto value={cryptoYield} symbol={asset.symbol} />
             <Amount.Fiat color='gray.500' value={fiatYield} />
           </Flex>
@@ -149,7 +149,7 @@ export const Broadcast = ({ apr, assetId, cryptoStakeAmount, fiatRate }: StakePr
               <InfoOutlineIcon />
             </Tooltip>
           </CText>
-          <Flex direction='column' alignItems='flex-end'>
+          <Flex flexDirection='column' alignItems='flex-end'>
             <Amount.Crypto value='0.0005' symbol={asset.symbol} />
             <Amount.Fiat color='gray.500' value={'0.01'} />
           </Flex>
