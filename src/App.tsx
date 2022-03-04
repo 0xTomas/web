@@ -1,6 +1,7 @@
 import { Alert, AlertDescription } from '@chakra-ui/alert'
 import { Button } from '@chakra-ui/button'
 import { ToastId, useToast } from '@chakra-ui/toast'
+import { useConfig } from 'config'
 import { pluginManager, registerPlugins } from 'plugins'
 import { useEffect, useRef, useState } from 'react'
 import { FaSync } from 'react-icons/fa'
@@ -18,6 +19,7 @@ export const App = () => {
   const toastIdRef = useRef<ToastId | null>(null)
   const updateId = 'update-app'
   const translate = useTranslate()
+  const config = useConfig()
 
   useEffect(() => {
     registerPlugins()
@@ -28,7 +30,7 @@ export const App = () => {
         console.error('RegisterPlugins', e)
         setPluginRoutes([])
       })
-  }, [setPluginRoutes])
+  }, [setPluginRoutes, config])
 
   useEffect(() => {
     if (shouldUpdate && !toast.isActive(updateId)) {
